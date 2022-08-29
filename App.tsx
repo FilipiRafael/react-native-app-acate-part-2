@@ -1,5 +1,5 @@
-import PokeCard from './components/PokeCard';
+import RMCharacters from './components/RMCharacters';
 
 export default function App() {
-  return <PokeCard />
+  return <RMCharacters />
 }
