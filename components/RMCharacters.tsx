@@ -42,10 +42,20 @@ const RMCharacters: React.FC = () => {
                                     style={styles.modal}
                                 >
                                     {characterSelected && (
-                                        <View>
-                                            <Text>{characterSelected.name}</Text>
-                                            <Text>{characterSelected.specie}</Text>
-                                            <Text>{characterSelected.gender}</Text>
+                                        <View style={styles.modal}>
+                                            <Image
+                                                source={{ uri: characterSelected.image }}
+                                                style={styles.avatarSelected}
+                                            />
+                                            <Text
+                                                style={styles.textName}
+                                            >{characterSelected.name}</Text>
+                                            <Text
+                                                style={styles.text}
+                                            >{characterSelected.specie}</Text>
+                                            <Text
+                                                style={styles.text}
+                                            >{characterSelected.gender}</Text>
                                         </View>
                                     )}
                                     <Pressable
@@ -100,13 +110,20 @@ const styles = StyleSheet.create({
         width: Dimensions.get('screen').width,
         height: Dimensions.get('screen').height,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#121212'
     },
     avatar: {
         width: Dimensions.get('window').width - 40,
         height: Dimensions.get('window').height - 600,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10
+    },
+    avatarSelected: {
+        width: Dimensions.get('window').width - 40,
+        height: Dimensions.get('window').height - 600,
+        borderRadius: 10,
+        marginVertical: 20
     },
     card: {
         marginVertical: 20,
